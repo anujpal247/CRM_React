@@ -1,7 +1,12 @@
 import "./App.css";
+import Login from "./pages/auth/Login";
 
 function App() {
-  return <button className="btn btn-soft btn-accent">Accent</button>;
+  return (
+    <>
+      <Login />
+    </>
+  );
 }
 
 export default App;
