@@ -1,11 +1,11 @@
 import "./App.css";
 
-import Signup from "./pages/auth/Signup";
+import MainRoutes from "./Routing/MainRoutes";
 
 function App() {
   return (
     <>
-      <Signup />
+      <MainRoutes />
     </>
   );
 }
