@@ -1,9 +1,18 @@
 import { FiMenu } from "react-icons/fi";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+
+import { authActions } from "../Redux/Slices/AuthSlice";
 
 export default function HomeLayout({ children }) {
-  const authStatus = useSelector((state) => state.auth);
+  const authState = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    dispatch(authActions.logout());
+    navigate("/");
+  }
   return (
     <div className="min-h-[90vh]">
       <div className="drawer absolute left-0 right-0">
@@ -28,11 +37,11 @@ export default function HomeLayout({ children }) {
               <a>Dashboard</a>
             </li>
             <div className="absolute bottom-2 w-70 justify-end flex gap-4">
-              {authStatus.isLoggedIn ? (
+              {authState.isLoggedIn ? (
                 <>
-                  <Link to="/" className="btn btn-primary">
+                  <button onClick={handleLogout} className="btn btn-primary">
                     Logout
-                  </Link>
+                  </button>
                   <Link to="/profile" className="btn btn-secondary">
                     Profile
                   </Link>

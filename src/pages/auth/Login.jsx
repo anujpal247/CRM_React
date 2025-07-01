@@ -58,7 +58,7 @@ function Login() {
               Login
             </button>
           </div>
-          <div className="text-center text-xl text-slate-100">
+          <div className="text-center text-[20px] font-semibold text-slate-100">
             Dont have an account?{" "}
             <Link
               to="/signup"

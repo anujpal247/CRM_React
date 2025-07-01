@@ -114,7 +114,7 @@ function Signup() {
               Signup
             </button>
           </div>
-          <div className="text-center text-xl text-slate-100">
+          <div className="text-center text-[20px] font-semibold text-slate-100">
             Already have an account?{" "}
             <Link to="/login" className="text-yellow-300 hover:text-yellow-400">
               login
