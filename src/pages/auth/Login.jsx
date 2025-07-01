@@ -29,7 +29,7 @@ function Login() {
     const response = await dispatch(login(data));
     console.log(response);
     if (response.payload) {
-      navigate("/signup");
+      navigate("/login");
     }
   }
   return (
