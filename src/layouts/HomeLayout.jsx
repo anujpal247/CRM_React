@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { FiMenu } from "react-icons/fi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -13,6 +14,13 @@ export default function HomeLayout({ children }) {
     dispatch(authActions.logout());
     navigate("/");
   }
+
+  useEffect(() => {
+    if (!authState.isLoggedIn) {
+      navigate("/login");
+    }
+  }, []);
+
   return (
     <div className="min-h-[90vh]">
       <div className="drawer absolute left-0 right-0">
